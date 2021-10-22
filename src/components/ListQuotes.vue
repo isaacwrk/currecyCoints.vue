@@ -40,7 +40,9 @@
 import { defineComponent } from 'vue';
 
 const listQuotes = defineComponent({
-    props:{ quotes: {type:Object, required:true} },
+    props:{ 
+        quotes: {type:Object, required:true},
+        listenQuotes:{type:Array, required:true} },
 });
 
 export default listQuotes;
