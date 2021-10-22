@@ -5,7 +5,7 @@
       <div class="h4">Todas as moedas</div>
     </div>
     <div class="card-body">
-
+      <ListQuotes :quotes="quotes"/>
     </div>
   </div>
 </div>
@@ -14,13 +14,14 @@
 <script lang="ts">
 import { defineComponent, onMounted, reactive, toRefs } from "@vue/runtime-core"
 import api from '@/services/api'
+import ListQuotes from '@/components/ListQuotes.vue'
 
 interface NewDataState{
   quotes:any
 }
 
 const App = defineComponent({
-  components:{},
+  components:{ListQuotes},
   name:'App',
   setup(){
     const data = reactive<NewDataState>({

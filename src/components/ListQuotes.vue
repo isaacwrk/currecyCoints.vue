@@ -23,7 +23,14 @@
                     {{quote.pctChange}} %
                 </span>
             </td>
-            
+            <td>
+                <a href="#" class="btn btn-primary btn-sm tooltip tooltip-left"
+                    data-tooltip="Seguir"
+                >
+                <i class="icon icon-plus"></i>
+                </a>
+            </td>
+
         </tr>
     </tbody>
 </table>
