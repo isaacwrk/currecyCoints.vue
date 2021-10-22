@@ -1,5 +1,5 @@
 <template>
-    <ListQuotes quotes="quotes" :listen-quotes="listenQuotes"/>
+    <ListQuotes :quotes="quotes" :listen-quotes="listenQuotes"/>
     <div class="mt-2 text-right">
         <cite class="text-small">
             Atualizará novamente em <b>{{nextUpdateTime}} segundos</b>
@@ -13,7 +13,6 @@ import { defineComponent, ref, PropType, onMounted } from 'vue';
 import ListQuotes from './ListQuotes.vue';
 
 
-
 const listQuotes = defineComponent({
     components:{ ListQuotes },
     props:{
@@ -23,7 +22,7 @@ const listQuotes = defineComponent({
         }
     },
     setup(props){
-        const interval = ref(null);
+        //const interval = ref(null);
         const quotes = ref();
         const nextUpdateTime = ref(30);
         
@@ -35,7 +34,7 @@ const listQuotes = defineComponent({
         onMounted(()=>{
             refresh();
         });
-        
+
         return{ refresh,quotes, nextUpdateTime, };
     }
 });
