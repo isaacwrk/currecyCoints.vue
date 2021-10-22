@@ -6,8 +6,8 @@ const currencyService ={
         const resp = await http.get<CurrencyListDTO>('/all');
         return resp.data; 
     },
-    // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-    getListenCurrencies(codes = []){
+    
+    getListenCurrencies(codes:string[]){
         return http.get(`/all/${codes.join()}`);
     }
 };
