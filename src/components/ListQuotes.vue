@@ -24,9 +24,11 @@
                 </span>
             </td>
             <td>
-                <a href="#" class="btn btn-primary btn-sm tooltip tooltip-left"
-                    data-tooltip="Seguir"
-                    @click="$emit('listen',key)"
+                <a
+                v-if="!listenQuotes.includes(key)"
+                class="btn btn-primary btn-sm tooltip tooltip-left"
+                data-tooltip="Seguir"
+                @click="$emit('listen',key)"
                 >
                 <i class="icon icon-plus"></i>
                 </a>

@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, reactive, toRefs } from "@vue/runtime-core"
-import api from '@/services/api'
+import http from '@/services/currencyService'
 import ListQuotes from '@/components/ListQuotes.vue'
 import WatchListQuotes from '@/components/WatchListQuotes.vue'
 
@@ -45,7 +45,7 @@ const App = defineComponent({
     })
 
     onMounted(async() => {
-      const response = await api.all()
+      const response = await http.getAllCurrencies()
       data.quotes = response.data
     });
 
