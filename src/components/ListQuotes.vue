@@ -26,6 +26,7 @@
             <td>
                 <a href="#" class="btn btn-primary btn-sm tooltip tooltip-left"
                     data-tooltip="Seguir"
+                    @click="$emit('listen',key)"
                 >
                 <i class="icon icon-plus"></i>
                 </a>
@@ -43,6 +44,7 @@ const listQuotes = defineComponent({
     props:{ 
         quotes: {type:Object, required:true},
         listenQuotes:{type:Array, required:true} },
+    emits:['listen']
 });
 
 export default listQuotes;

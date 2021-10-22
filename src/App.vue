@@ -13,7 +13,11 @@
       <div class="h4">Todas as moedas</div>
     </div>
     <div class="card-body">
-      <ListQuotes :quotes="quotes" :listen-quotes="listenQuotes"/>
+      <ListQuotes 
+      :quotes="quotes" 
+      :listen-quotes="listenQuotes"
+      @listen="onListen"
+      />
     </div>
   </div>
 </div>
@@ -43,13 +47,19 @@ const App = defineComponent({
     onMounted(async() => {
       const response = await api.all()
       data.quotes = response.data
-    })
+    });
+
     
-    return {...toRefs(data)}
+    function onListen(code:never){ 
+      data.listenQuotes.push(code)
+  }
+
+    return {
+      ...toRefs(data),
+       onListen
+       }
   }
 })
-
-
 export default App;
 </script>
 
